@@ -1,0 +1,114 @@
+# Customise this file, documentation can be found here:
+# https://github.com/krausefx/fastlane#customise-the-fastfile
+
+require 'dotenv'
+Dotenv.load
+
+before_all do
+
+  # Clean up
+  system "(cd ../; (rm -f #{ENV['SCHEME']}.app.dSYM.zip) )"
+  system "(cd ../; (rm -f #{ENV['SCHEME']}.ipa) )"
+
+  # Increments build number of your project
+  increment_build_number
+
+  # Makes sure all cocoapods are up to date
+  cocoapods
+
+  # Runs unit tests
+  # - argumnets passed as array of strings
+  # - Docs on xctool (https://github.com/facebook/xctool)
+  xctool ["-workspace #{ENV['WORKSPACE']}", "-scheme #{ENV['SCHEME']}"]
+
+end
+
+lane :test do
+
+  # Takes all screenshots for you (so magical)
+  # - Configurations are in Snapfile
+  # - Steps are defined in the snapshot.js
+  snapshot
+
+end
+
+lane :beta do
+
+  # Gets (and renews) provisioning profiles
+  sigh
+
+  # Builds IPA
+  system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Debug ) )"
+
+  # Send to HockeyApp
+  hockey({
+    api_token: ENV['HOCKEYAPP_API_TOKEN'],
+    ipa: "./#{ENV['SCHEME']}.ipa",
+    notify: 1
+  })
+
+end
+
+lane :deploy do
+  # snapshot
+  # sigh
+  # deliver :skip_deploy, :force
+  # frameit
+end
+
+lane :inhouse do
+  
+  # sigh
+  sigh
+
+  # Builds IPA
+  system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Release ) )"
+
+  upload_to_s3({
+    ipa_name: ENV['ipa_name'],
+    scheme: ENV['SCHEME'],
+    bundle_id: ENV['BUNDLE_ID'],
+    s3_bucket: ENV['S3_BUCKET'],
+    s3_access_key: ENV['S3_ACCESS_KEY'],
+    s3_secret_access_key: ENV['S3_SECRET_ACCESS_KEY']
+  })
+
+end
+
+# You can define as many lanes as you want
+
+after_all do |lane|
+
+  # Create message for slack 
+  message = nil
+  case lane
+  when :beta
+    build_number = Actions.lane_context[ Actions::SharedValues::BUILD_NUMBER ]
+
+    url = Actions.lane_context[ Actions::SharedValues::HOCKEY_DOWNLOAD_LINK ]
+    build_info = Actions.lane_context[ Actions::SharedValues::HOCKEY_BUILD_INFORMATION ]
+
+    message = "Deployed build #{build_number} of #{build_info['title']} to HockeyApp - #{url}"
+  when :inhouse
+    build_number = `(cd ../; xcrun agvtool what-version -terse)`.strip
+    version_number = `(cd ../; xcrun agvtool what-marketing-version -terse1)`.strip
+    version_name = "v#{version_number} (#{build_number})"
+
+    url = Actions.lane_context[ Actions::SharedValues::UPLOAD_TO_S3_URL]
+    message = "Deployed build #{version_name} to S3 - #{url}"
+  end
+
+  # Sebd nessage to slack
+  if message
+    slack({
+     message: message,
+     success: true,
+    })
+  end
+
+end
+
+
+error do |lane, exception|
+  # Something bad happened
+end

@@ -16,3 +16,12 @@ profile
 
 # CocoaPods stuffs
 Pods/
+
+# Environment stuffs
+.env
+
+# Fastlane stuffs
+fastlane/report.xml
+*.mobileprovision
+*.app.dSYM.zip
+*.ipa
