@@ -52,8 +52,8 @@ end
 lane :deploy do
   # snapshot
   # sigh
-  # deliver :skip_deploy, :force
-  # frameit
+  system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Release ) )"
+  deliver :skip_deploy, :force
 end
 
 lane :inhouse do
@@ -62,7 +62,7 @@ lane :inhouse do
   sigh
 
   # Builds IPA
-  system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Release ) )"
+  system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Inhouse ) )"
 
   upload_to_s3({
     ipa_name: ENV['ipa_name'],

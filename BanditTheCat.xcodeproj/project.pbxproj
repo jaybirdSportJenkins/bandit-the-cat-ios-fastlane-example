@@ -423,11 +423,13 @@
 			baseConfigurationReference = 688092829AD527408F0BAEAD /* Pods-BanditTheCat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 25;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 37;
 				INFOPLIST_FILE = BanditTheCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8a4b2100-678d-48a8-8f42-6015b96b6a13";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -437,11 +439,13 @@
 			baseConfigurationReference = 36934E929B5228AFB38BB79F /* Pods-BanditTheCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 25;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 37;
 				INFOPLIST_FILE = BanditTheCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "69f76e22-ea6d-4beb-a142-d1ae0486be25";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -480,6 +484,72 @@
 			};
 			name = Release;
 		};
+		034EF1111A80A3C5006FBD03 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Inhouse;
+		};
+		034EF1121A80A3C5006FBD03 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36934E929B5228AFB38BB79F /* Pods-BanditTheCat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = 37;
+				INFOPLIST_FILE = BanditTheCat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9facd5f9-ec3c-4ad2-b480-9bbc542d286c";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Inhouse;
+		};
+		034EF1131A80A3C5006FBD03 /* Inhouse */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BanditTheCatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BanditTheCat.app/BanditTheCat";
+			};
+			name = Inhouse;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -488,6 +558,7 @@
 			buildConfigurations = (
 				0344AFD61A8069590005ACB3 /* Debug */,
 				0344AFD71A8069590005ACB3 /* Release */,
+				034EF1111A80A3C5006FBD03 /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -497,6 +568,7 @@
 			buildConfigurations = (
 				0344AFD91A8069590005ACB3 /* Debug */,
 				0344AFDA1A8069590005ACB3 /* Release */,
+				034EF1121A80A3C5006FBD03 /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -506,6 +578,7 @@
 			buildConfigurations = (
 				0344AFDC1A8069590005ACB3 /* Debug */,
 				0344AFDD1A8069590005ACB3 /* Release */,
+				034EF1131A80A3C5006FBD03 /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

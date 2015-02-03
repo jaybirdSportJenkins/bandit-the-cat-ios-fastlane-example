@@ -16,7 +16,7 @@ apple_id "963991661"
 # This folder has to include one folder for each language
 # More information about automatic screenshot upload: 
 # https://github.com/KrauseFx/deliver#upload-screenshots-to-itunes-connect
-screenshots_path "./deliver/screenshots/"
+screenshots_path "./screenshots/"
 
 
 # version '1.2' # you can pass this if you want to verify the version number with the ipa file
@@ -39,7 +39,7 @@ ipa do
     # If you only want to upload app metadata, remove the complete ipa block.
 
     # system("ipa build --verbose") # build your project using Shenzhen
-    "./BanditTheCat.ipa" # Tell 'Deliver' where it can find the finished ipa file
+    "../BanditTheCat.ipa" # Tell 'Deliver' where it can find the finished ipa file
 end
 
 # ipa "./latest.ipa" # this can be used instead of the `do` block, if you prefer manually building the ipa file

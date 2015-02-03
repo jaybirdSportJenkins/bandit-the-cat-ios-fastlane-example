@@ -1,13 +1,16 @@
 {
   "en-US": {
     "title": "Bandit The Cat",
-    "description": "",
+    "description": "OMG this cat is so awesome. Just until you see all the cute pictures.",
     "version_whats_new": "",
-    "software_url": "",
-    "support_url": "",
-    "privacy_url": "",
+    "software_url": "http://www.banditthecat.com",
+    "support_url": "http://www.banditthecat.com/support",
+    "privacy_url": "http://www.banditthecat.com/privacy",
     "keywords": [
-
+        "cats",
+        "cute",
+        "omg",
+        "soaesome"
     ]
   }
 }
