@@ -6,6 +6,10 @@ Dotenv.load
 
 before_all do
 
+  # Clean up
+  system "(cd ../; (rm -f #{ENV['SCHEME']}.app.dSYM.zip) )"
+  system "(cd ../; (rm -f #{ENV['SCHEME']}.ipa) )"
+
   # Increments build number of your project
   increment_build_number
 
@@ -34,7 +38,7 @@ lane :beta do
   sigh
 
   # Builds IPA
-  system "(cd ../; ( ipa build -w #{ENV['WORKSPACE']} -s #{ENV['SCHEME']} -c Release ) )"
+  system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Debug ) )"
 
   # Send to HockeyApp
   hockey({
@@ -58,7 +62,7 @@ lane :inhouse do
   sigh
 
   # Builds IPA
-  system "(cd ../; ( ipa build -w #{ENV['WORKSPACE']} -s #{ENV['SCHEME']} -c Release ) )"
+  system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Release ) )"
 
   upload_to_s3({
     ipa_name: ENV['ipa_name'],
@@ -89,7 +93,7 @@ after_all do |lane|
     build_number = `(cd ../; xcrun agvtool what-version -terse)`.strip
     version_number = `(cd ../; xcrun agvtool what-marketing-version -terse1)`.strip
     version_name = "v#{version_number} (#{build_number})"
-    
+
     url = Actions.lane_context[ Actions::SharedValues::UPLOAD_TO_S3_URL]
     message = "Deployed build #{version_name} to S3 - #{url}"
   end

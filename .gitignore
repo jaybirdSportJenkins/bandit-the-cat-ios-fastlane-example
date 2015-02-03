@@ -24,4 +24,4 @@ Pods/
 fastlane/report.xml
 *.mobileprovision
 *.app.dSYM.zip
-*.ipa 
+*.ipa
