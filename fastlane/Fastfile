@@ -15,7 +15,7 @@ before_all do
   # Runs unit tests
   # - argumnets passed as array of strings
   # - Docs on xctool (https://github.com/facebook/xctool)
-  xctool ["-workspace BanditTheCat.xcworkspace", "-scheme BanditTheCat"]
+  xctool ["-workspace #{ENV['WORKSPACE']}", "-scheme #{ENV['SCHEME']}"]
 
 end
 
@@ -29,10 +29,17 @@ lane :test do
 end
 
 lane :beta do
-  # snapshot
-  # sigh
-  # deliver :skip_deploy, :beta
-  # sh "your_script.sh"
+
+  sigh
+  sh "(cd ../; ( ipa build -w ./#{ENV['WORKSPACE']} -s #{ENV['SCHEME']} ) )"
+
+  # Send to HockeyApp
+  hockey({
+    api_token: ENV['HOCKEYAPP_API_TOKEN'],
+    ipa: "./#{ENV['SCHEME']}.ipa",
+    notify: 1
+  })
+
 end
 
 lane :deploy do

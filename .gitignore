@@ -22,3 +22,6 @@ Pods/
 
 # Fastlane stuffs
 fastlane/report.xml
+.mobileprovision
+.app.dSYM.zip
+.ipa 
