@@ -5,3 +5,4 @@ gem 'dotenv'
 
 gem 'slack-notifier'
 gem 'shenzhen'
+gem 'aws-s3'
