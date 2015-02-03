@@ -1,4 +1,3 @@
-# Uncomment the lines below you want to change by removing the # in the beginning
 
 # A list of devices you want to take the screenshots from
 devices([
@@ -11,21 +10,21 @@ devices([
 
 languages([
   'en-US',
-  'de-DE',
-  'it-IT'
+  # 'de-DE',
+  # 'it-IT'
 ])
 
 # Where should the resulting screenshots be stored?
 screenshots_path "./screenshots"
 
 # JavaScript UIAutomation file
-# js_file './snapshot.js'
+js_file './snapshot.js'
 
 # The name of the project's scheme
-# scheme 'SchemeName'
+scheme 'BanditTheCat'
 
 # Where is your project (or workspace)? Provide the full path here
-# project_path './YourProject.xcworkspace'
+project_path '../BanditTheCat.xcworkspace'
 
 # By default, the latest version should be used automatically. If you want to change it, do it here
 # ios_version '8.1'
