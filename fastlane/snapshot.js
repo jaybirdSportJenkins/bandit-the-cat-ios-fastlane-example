@@ -17,7 +17,7 @@ target.delay(1)
 captureLocalizedScreenshot("1-CuterScreen")
 
 // Rotate to landscape
-target.setDeviceOrientation(UIA_DEVICE_ORIENTATION_LANDSCAPELEFT);
+// target.setDeviceOrientation(UIA_DEVICE_ORIENTATION_LANDSCAPELEFT);
 
 target.frontMostApp().tabBar().buttons()[2].tap();
 target.delay(1)

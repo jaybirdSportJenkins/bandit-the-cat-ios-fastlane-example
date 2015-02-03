@@ -50,7 +50,7 @@ lane :beta do
 end
 
 lane :deploy do
-  # snapshot
+  snapshot
   # sigh
   system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Release ) )"
   deliver :skip_deploy, :force

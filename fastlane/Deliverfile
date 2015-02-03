@@ -13,15 +13,9 @@ config_json_folder './deliver'
 
 version '1.0.0' # you can pass this if you want to verify the version number with the ipa file
 
-title({
-  "en-US" => "Your App Name"
-})
-
 app_icon '../Icons/Icon-1024.png'
 
 copyright "#{Time.now.year} RokkinCat"
-
-automatic_release false
 
 app_review_information({
   first_name: "Josh",
@@ -40,6 +34,4 @@ secondary_category "Books"
 # Building and Testing
 ########################################
 
-ipa do
-    "../BanditTheCat.ipa" # Tell 'Deliver' where it can find the finished ipa file
-end
+ipa "../BanditTheCat.ipa" # Tell 'Deliver' where it can find the finished ipa file
