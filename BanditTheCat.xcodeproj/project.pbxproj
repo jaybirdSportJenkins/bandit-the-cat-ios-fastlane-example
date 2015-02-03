@@ -14,6 +14,10 @@
 		0344AFC61A8069590005ACB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0344AFC51A8069590005ACB3 /* Images.xcassets */; };
 		0344AFC91A8069590005ACB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0344AFC71A8069590005ACB3 /* LaunchScreen.xib */; };
 		0344AFD51A8069590005ACB3 /* BanditTheCatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0344AFD41A8069590005ACB3 /* BanditTheCatTests.m */; };
+		036AD6551A806E33009952EA /* cute.png in Resources */ = {isa = PBXBuildFile; fileRef = 036AD6541A806E33009952EA /* cute.png */; };
+		036AD6581A806E91009952EA /* cuter.png in Resources */ = {isa = PBXBuildFile; fileRef = 036AD6561A806E91009952EA /* cuter.png */; };
+		036AD6591A806E91009952EA /* cutest.png in Resources */ = {isa = PBXBuildFile; fileRef = 036AD6571A806E91009952EA /* cutest.png */; };
+		87C56730B53199C2EBDC4B43 /* libPods-BanditTheCat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F7457B9D123F017EE1B61A /* libPods-BanditTheCat.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,12 @@
 		0344AFCE1A8069590005ACB3 /* BanditTheCatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BanditTheCatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0344AFD31A8069590005ACB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0344AFD41A8069590005ACB3 /* BanditTheCatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BanditTheCatTests.m; sourceTree = "<group>"; };
+		036AD6541A806E33009952EA /* cute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cute.png; sourceTree = "<group>"; };
+		036AD6561A806E91009952EA /* cuter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cuter.png; sourceTree = "<group>"; };
+		036AD6571A806E91009952EA /* cutest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cutest.png; sourceTree = "<group>"; };
+		22F7457B9D123F017EE1B61A /* libPods-BanditTheCat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BanditTheCat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36934E929B5228AFB38BB79F /* Pods-BanditTheCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanditTheCat.release.xcconfig"; path = "Pods/Target Support Files/Pods-BanditTheCat/Pods-BanditTheCat.release.xcconfig"; sourceTree = "<group>"; };
+		688092829AD527408F0BAEAD /* Pods-BanditTheCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanditTheCat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BanditTheCat/Pods-BanditTheCat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C56730B53199C2EBDC4B43 /* libPods-BanditTheCat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +77,8 @@
 				0344AFB71A8069590005ACB3 /* BanditTheCat */,
 				0344AFD11A8069590005ACB3 /* BanditTheCatTests */,
 				0344AFB61A8069590005ACB3 /* Products */,
+				489D4BAB06DEAE5681C94058 /* Pods */,
+				B3D9B2A1DF1E1B3A2F2D59E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +94,7 @@
 		0344AFB71A8069590005ACB3 /* BanditTheCat */ = {
 			isa = PBXGroup;
 			children = (
+				036AD64D1A806C94009952EA /* Images */,
 				0344AFBC1A8069590005ACB3 /* AppDelegate.h */,
 				0344AFBD1A8069590005ACB3 /* AppDelegate.m */,
 				0344AFBF1A8069590005ACB3 /* ViewController.h */,
@@ -119,6 +133,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		036AD64D1A806C94009952EA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				036AD6541A806E33009952EA /* cute.png */,
+				036AD6561A806E91009952EA /* cuter.png */,
+				036AD6571A806E91009952EA /* cutest.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		489D4BAB06DEAE5681C94058 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				688092829AD527408F0BAEAD /* Pods-BanditTheCat.debug.xcconfig */,
+				36934E929B5228AFB38BB79F /* Pods-BanditTheCat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B3D9B2A1DF1E1B3A2F2D59E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F7457B9D123F017EE1B61A /* libPods-BanditTheCat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0344AFD81A8069590005ACB3 /* Build configuration list for PBXNativeTarget "BanditTheCat" */;
 			buildPhases = (
+				6AF3D3B007F8A59D8E962817 /* Check Pods Manifest.lock */,
 				0344AFB11A8069590005ACB3 /* Sources */,
 				0344AFB21A8069590005ACB3 /* Frameworks */,
 				0344AFB31A8069590005ACB3 /* Resources */,
+				8BE0D7AA89CC227D82536AA0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +245,9 @@
 				0344AFC41A8069590005ACB3 /* Main.storyboard in Resources */,
 				0344AFC91A8069590005ACB3 /* LaunchScreen.xib in Resources */,
 				0344AFC61A8069590005ACB3 /* Images.xcassets in Resources */,
+				036AD6591A806E91009952EA /* cutest.png in Resources */,
+				036AD6551A806E33009952EA /* cute.png in Resources */,
+				036AD6581A806E91009952EA /* cuter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +259,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AF3D3B007F8A59D8E962817 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8BE0D7AA89CC227D82536AA0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BanditTheCat/Pods-BanditTheCat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0344AFB11A8069590005ACB3 /* Sources */ = {
@@ -341,9 +420,11 @@
 		};
 		0344AFD91A8069590005ACB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 688092829AD527408F0BAEAD /* Pods-BanditTheCat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BanditTheCat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,9 +432,11 @@
 		};
 		0344AFDA1A8069590005ACB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36934E929B5228AFB38BB79F /* Pods-BanditTheCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BanditTheCat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +495,7 @@
 				0344AFDA1A8069590005ACB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0344AFDB1A8069590005ACB3 /* Build configuration list for PBXNativeTarget "BanditTheCatTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +504,7 @@
 				0344AFDD1A8069590005ACB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
