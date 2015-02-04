@@ -10,7 +10,8 @@
   - I can include `.env` in my `.gitignore` file so no one else has my credentials
 
 ## Fastlane 
-- [Fastfile](https://github.com/RokkinCat/bandit-the-cat-ios-fastlane-example/blob/master/fastlane/Fastfile) - define your lanes (test, beta, deploy, inhouse)
+- [Fastfile](https://github.com/RokkinCat/bandit-the-cat-ios-fastlane-example/blob/master/fastlane/Fastfile) - define your lanes (test, beta, deploy, inhouse, etc.)
+- [actions](https://github.com/RokkinCat/bandit-the-cat-ios-fastlane-example/tree/master/fastlane/actions) - create custom actions for your lanes (upload to S3, upload through FTP, send a text through Twilio, etc.)
 
 ## Snapshot
 - Used to take screenshots across all/any devices
