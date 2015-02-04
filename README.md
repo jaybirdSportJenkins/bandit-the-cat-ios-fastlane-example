@@ -1,5 +1,4 @@
 # fastlane example with Bandit The Cat
-==========================
 
 ## My Additions
 - Gemfile
