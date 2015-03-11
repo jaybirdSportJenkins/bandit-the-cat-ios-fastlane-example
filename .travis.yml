@@ -1,4 +1,4 @@
 language: objective-c
 before_install:
     - bundle update
-script: fastlane test_ci
+script: bundle exec fastlane test_ci
