@@ -1,7 +1,7 @@
 language: objective-c
 before_script:
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a -out scripts/certs/dist.cer
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a -out scripts/certs/dist.p12
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/inhouse.cer.enc -d -a -out scripts/certs/inhouse.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/inhouse.p12.enc -d -a -out scripts/certs/inhouse.p12
 - ./scripts/add-key.sh
 script: bundle exec fastlane beta
 env:
