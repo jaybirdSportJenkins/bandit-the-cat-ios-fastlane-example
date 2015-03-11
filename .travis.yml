@@ -1,0 +1,4 @@
+language: objective-c
+before_install:
+    - bundle update
+script: fastlane test_ci
