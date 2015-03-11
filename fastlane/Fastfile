@@ -23,6 +23,10 @@ before_all do |lane|
 
 end
 
+lane :test_ci do
+  puts "test ci"
+end
+
 lane :ipa do
   
   ipa({
