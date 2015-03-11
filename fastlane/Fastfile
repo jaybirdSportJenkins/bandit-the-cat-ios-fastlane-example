@@ -1,25 +1,50 @@
 # Customise this file, documentation can be found here:
 # https://github.com/krausefx/fastlane#customise-the-fastfile
 
-require 'dotenv'
-Dotenv.load
+require 'bundler/setup'
+require 'fastlane_env_lanes'
 
-before_all do
+before_all do |lane|
 
   # Clean up
-  system "(cd ../; (rm -f #{ENV['SCHEME']}.app.dSYM.zip) )"
-  system "(cd ../; (rm -f #{ENV['SCHEME']}.ipa) )"
+  # system "(cd ../; (rm -f #{ENV['SCHEME']}.app.dSYM.zip) )"
+  # system "(cd ../; (rm -f #{ENV['SCHEME']}.ipa) )"
 
-  # Increments build number of your project
-  increment_build_number
+  # # Increments build number of your project
+  # increment_build_number
 
-  # Makes sure all cocoapods are up to date
-  cocoapods
+  # # Makes sure all cocoapods are up to date
+  # cocoapods
 
-  # Runs unit tests
-  # - argumnets passed as array of strings
-  # - Docs on xctool (https://github.com/facebook/xctool)
-  xctool ["-workspace #{ENV['WORKSPACE']}", "-scheme #{ENV['SCHEME']}"]
+  # # Runs unit tests
+  # # - argumnets passed as array of strings
+  # # - Docs on xctool (https://github.com/facebook/xctool)
+  # xctool ["-workspace #{ENV['WORKSPACE']}", "-scheme #{ENV['SCHEME']}"]
+
+end
+
+lane :ipa do
+  
+  ipa({
+    workspace: ENV['WORKSPACE'],
+    project: nil,
+    configuration: nil,
+    scheme: ENV['SCHEME'],
+    clean: nil,
+    archive: nil,
+    destination: nil,
+    embed: nil,
+    identity: nil,
+    sdk: nil,
+    # ipa: 'JoshIsAwesome.ipa'
+    verbose: nil
+  })
+
+  ipa_path = Actions.lane_context[ Actions::SharedValues::IPA_OUTPUT_PATH ]
+  dsym_path = Actions.lane_context[ Actions::SharedValues::DSYM_OUTPUT_PATH ]
+
+  puts "ipa_path = #{ipa_path}"
+  puts "dsym_path = #{dsym_path}"
 
 end
 
@@ -32,13 +57,38 @@ lane :test do
 
 end
 
+lane :do_s3 do
+  ipa({
+      workspace: ENV['WORKSPACE'],
+      scheme: ENV['SCHEME'],
+      configuration: 'Inhouse'
+    })
+  
+  s3({
+    # access_key: ENV['S3_ACCESS_KEY'],
+    # secret_access_key: ENV['S3_SECRET_ACCESS_KEY'],
+    # bucket: 'fastlane-test-bucket',
+    # ipa: 'SnapifeyePro.ipa',
+    # dsym: 'SnapifeyePro.app.dSYM.zip',
+    # path: 'v{CFBundleShortVersionString}_b{CFBundleVersion}/',
+
+    # html_template_path: "./fastlane/s3_template.erb.html",
+    # plist_template_path: "/Users/josh/Projects/fastlane/lib/assets/s3_plist_template.erb",
+    # html_template_path: "/Users/josh/Projects/fastlane/lib/assets/s3_html_template.erb",
+    # html_file_name: "tehetehe.html"
+    })
+end
+
 lane :beta do
 
   # Gets (and renews) provisioning profiles
-  sigh
+  # sigh
 
   # Builds IPA
-  system "(cd ../; ( ipa build -s #{ENV['SCHEME']} -c Debug ) )"
+  ipa({
+    workspace: ENV['WORKSPACE'],
+    scheme: ENV['SCHEME'],
+  })
 
   # Send to HockeyApp
   hockey({

@@ -423,8 +423,8 @@
 			baseConfigurationReference = 688092829AD527408F0BAEAD /* Pods-BanditTheCat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 57;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Josh Holtz (M57ML2945L)";
+				CURRENT_PROJECT_VERSION = 63;
 				INFOPLIST_FILE = BanditTheCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -439,8 +439,8 @@
 			baseConfigurationReference = 36934E929B5228AFB38BB79F /* Pods-BanditTheCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 57;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rokkincat LLC (WPBN76YKX2)";
+				CURRENT_PROJECT_VERSION = 63;
 				INFOPLIST_FILE = BanditTheCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -524,8 +524,8 @@
 			baseConfigurationReference = 36934E929B5228AFB38BB79F /* Pods-BanditTheCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 57;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rokkincat LLC (WPBN76YKX2)";
+				CURRENT_PROJECT_VERSION = 63;
 				INFOPLIST_FILE = BanditTheCat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
