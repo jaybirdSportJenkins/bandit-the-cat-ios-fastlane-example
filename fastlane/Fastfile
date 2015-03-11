@@ -86,12 +86,15 @@ end
 lane :beta do
 
   # Gets (and renews) provisioning profiles
-  # sigh
+  sigh({
+    provisioning_file_name: "Bandit_The_Cat_Dist.mobileprovision"
+  })
 
   # Builds IPA
   ipa({
     workspace: ENV['WORKSPACE'],
     scheme: ENV['SCHEME'],
+    configuration: ENV['Inhouse']
   })
 
   # Send to HockeyApp
