@@ -146,3 +146,14 @@ after_all do |lane|
 
 end
 ```
+
+## Travis
+
+- Export inhouse.cer and inhouse.p12
+- `travis encrypt "KEY_PASSWORD={password}" --add`
+- `travis encrypt "ENCRYPTION_SECRET={encryption_secret}" --add`
+- Encrypt inhouse.cer and inhouse.p12
+```
+openssl aes-256-cbc -k "{encryption_secret}" -in scripts/certs/inhouse.cer -out scripts/certs/inhouse.cer.enc -a
+openssl aes-256-cbc -k "{encryption_secret}" -in scripts/certs/inhouse.p12 -out scripts/certs/inhouse.p12.enc -a
+```

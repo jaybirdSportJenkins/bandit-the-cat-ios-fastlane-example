@@ -1,2 +1,10 @@
 language: objective-c
-script: bundle exec fastlane test_ci
+before_script:
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a -out scripts/certs/dist.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a -out scripts/certs/dist.p12
+- ./scripts/add-key.sh
+script: bundle exec fastlane beta
+env:
+  global:
+  - secure: XRAzhxsdiyNU2Gn18DKivkRt9E88l3KN91N/OflGtx0BLLTX+LTEp3EayJfMsKozJ/lr+OJ5vn5v4V1z0OEqfPZMBRKgKqGkYB9uechbEaDVtbzvHRI9AAoS45HJFWW9qsrsOBzTDjAsWXR+pwlEAvRBegBUe1EChLKggYZaCtY=
+  - secure: tF5vpwyTjQFpPL+Fp/nUUtVDv+9sXeV7AAhtSZKDFcCbCShGi3loPJA3ehCVsm0YzJNSeG+vU0W6iqd21AUK7XElBD1yLg0/fH4F872hC+2ji3aeoW0JW0dCOm1Dis+ASgB99FcmizYc+YwnCmv9z42KJod+cr9cW3+MJWRwOSI=
