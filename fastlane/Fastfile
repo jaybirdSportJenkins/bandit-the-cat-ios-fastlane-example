@@ -23,6 +23,25 @@ before_all do |lane|
 
 end
 
+lane :ci_build do
+  sh "rm -rf build"
+
+  xcodebuild(
+    clean: true,
+    archive: true,
+    archive_path: './build/BanditTheCat.xcarchive',
+    workspace: ENV['WORKSPACE'],
+    scheme: ENV['SCHEME'],
+    configuration: 'Release',
+    sdk: 'iphoneos',
+    )
+
+  xcodebuild(
+    export_archive: true,
+    export_path: './build/BanditTheCat'
+    )
+end
+
 lane :test_ci do
   puts "test ci"
 end

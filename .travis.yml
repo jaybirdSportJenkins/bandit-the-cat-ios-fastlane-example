@@ -3,7 +3,7 @@ before_script:
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/inhouse.cer.enc -d -a -out scripts/certs/inhouse.cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/inhouse.p12.enc -d -a -out scripts/certs/inhouse.p12
 - ./scripts/add-key.sh
-script: bundle exec fastlane beta
+script: bundle exec fastlane test_ci
 env:
   global:
   - secure: XRAzhxsdiyNU2Gn18DKivkRt9E88l3KN91N/OflGtx0BLLTX+LTEp3EayJfMsKozJ/lr+OJ5vn5v4V1z0OEqfPZMBRKgKqGkYB9uechbEaDVtbzvHRI9AAoS45HJFWW9qsrsOBzTDjAsWXR+pwlEAvRBegBUe1EChLKggYZaCtY=
