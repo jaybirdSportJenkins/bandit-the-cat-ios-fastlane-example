@@ -1,4 +1,6 @@
 machine:
+  environment:
+    XCODE_SCHEME: BanditTheCat
   xcode:
     version: 7.3
 dependencies:
