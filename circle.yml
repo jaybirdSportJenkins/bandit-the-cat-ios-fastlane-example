@@ -6,7 +6,7 @@ machine:
 dependencies:
   pre:
     - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
-    - bundle exec fastlane init
+    - fastlane init
 test:
   override:
-    - bundle exec fastlane ci_build
+    - fastlane ci_build
