@@ -8,8 +8,6 @@ dependencies:
    - exit 0
   pre:
     - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
-    - echo Y | rvm @global do gem uninstall --force bundler
-    - gem install bundler -v '1.10.6'
 test:
   override:
     - bundle exec fastlane init
